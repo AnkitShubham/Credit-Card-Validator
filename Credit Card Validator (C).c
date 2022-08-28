@@ -1,8 +1,34 @@
 #include<stdio.h>
 
+//Function that gives the output of the type of the card.
+
+void cardType(int ct)
+{
+    printf("\n\nCard type :");
+    if(ct==3)
+        {
+            printf("American Express.");
+        }
+
+    else if(ct==4)
+        {
+            printf("Visa.");
+        }
+
+    else if(ct==5)
+        {
+            printf("Mastercard.");
+        }
+
+    else if(ct==6)
+        {
+            printf("Discover.");
+        }
+}
+
 int main()
 {
-    int a,i,j,k,total;
+    int a,i,j,k,total,firstNumber;
     int sum1 = 0;
     int sum2 = 0;
 
@@ -24,6 +50,7 @@ int main()
         scanf("%d",&cardNumber[j]);
     }
 
+    firstNumber=cardNumber[1];
 
     //Application of Luhn Algorithm.
 
@@ -50,6 +77,7 @@ int main()
 
     if(total%10==0)
     {
+        cardType(firstNumber);
         printf("\n\nThe entered credit card number is Valid.\n\n");
     }
     else

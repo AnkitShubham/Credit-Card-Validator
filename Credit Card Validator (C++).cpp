@@ -1,9 +1,35 @@
 #include<iostream>
 using namespace std;
 
+//Function that gives the output of the type of the card.
+
+void cardType(int ct)
+{
+    cout <<"\n\nCard type :";
+    if(ct==3)
+        {
+            cout <<"American Express.";
+        }
+
+    else if(ct==4)
+        {
+            cout <<"Visa.";
+        }
+
+    else if(ct==5)
+        {
+            cout <<"Mastercard.";
+        }
+
+    else if(ct==6)
+        {
+            cout <<"Discover.";
+        }
+}
+
 int main()
 {
-    int a,i,j,k,total;
+    int a,i,j,k,total,firstNumber;
     int sum1 = 0;
     int sum2 = 0;
 
@@ -26,7 +52,10 @@ int main()
         cin >> cardNumber[j];
     }
 
+    firstNumber=cardNumber[1];
+
     //Application of Luhn Algorithm.
+
 
     for(i=(a-1);i>0;i=i-2)
     {
@@ -51,11 +80,12 @@ int main()
 
     if(total%10==0)
     {
-        cout <<"\n" <<"The entered credit card number is Valid." <<endl;
+        cardType(firstNumber);
+        cout <<"\n\n" <<"The entered credit card number is Valid." <<endl;
     }
     else
     {
-        cout <<"\n" <<"The entered credit card number is Invalid." <<endl;
+        cout <<"\n\n" <<"The entered credit card number is Invalid." <<endl;
     }
 
 
